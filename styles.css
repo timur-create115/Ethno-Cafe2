@@ -417,5 +417,4 @@ svg[viewBox="0 0 24 24"] {
 }
 
 
-/* Без изображений: карточки используют всю ширину */
-.cart-item { grid-template-columns: minmax(0, 1fr) auto; }
+
