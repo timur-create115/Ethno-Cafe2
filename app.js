@@ -153,7 +153,6 @@ function renderMenu() {
     .map(
       (d) => `
       <article class="dish">
-        <img class="dish__img" src="${d.img}" alt="${d.name}" loading="lazy" width="600" height="450" />
         <div class="dish__body">
           <h3 class="dish__name">${d.name}</h3>
           <p class="dish__desc">${d.desc}</p>
@@ -224,7 +223,6 @@ function renderCart() {
       const d = dishById(id);
       return `
       <li class="cart-item">
-        <img class="cart-item__img" src="${d.img}" alt="" width="64" height="64" />
         <div>
           <div class="cart-item__top">
             <div>
