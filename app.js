@@ -54,6 +54,9 @@ const MENU = [
    Ниже — логика. Обычно её менять не нужно.
    ========================================================== */
 
+const IMAGE_BASE = "https://vantage-plum-delta.vercel.app/site/";
+const dishImage = (dish) => `${IMAGE_BASE}${dish.img}`;
+
 const STORAGE_KEY = "ethno-place-cart-v1";
 const MAX_QTY = 50;
 const $ = (sel, root = document) => root.querySelector(sel);
@@ -153,6 +156,7 @@ function renderMenu() {
     .map(
       (d) => `
       <article class="dish">
+        <img class="dish__img" src="${dishImage(d)}" alt="${d.name}" loading="lazy" onerror="this.style.display=\'none\'" />
         <div class="dish__body">
           <h3 class="dish__name">${d.name}</h3>
           <p class="dish__desc">${d.desc}</p>
@@ -223,6 +227,7 @@ function renderCart() {
       const d = dishById(id);
       return `
       <li class="cart-item">
+        <img class="cart-item__img" src="${dishImage(d)}" alt="" loading="lazy" onerror="this.style.display=\'none\'" />
         <div>
           <div class="cart-item__top">
             <div>
